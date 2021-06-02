@@ -17,13 +17,14 @@ export class AppComponent implements OnInit{
   
   constructor (private travelService: TravelService){}
 
+  // On initialize gets city data from backend, and sets description field and weather field.
   ngOnInit(){
     this.getCity();
     this.description = "Description of city";
     this.weather = "Weather of city";
   }
   
-
+// updates the weather and description to match the city selected
 updateWeatherAndDescription(){
   for (let i = 0; i < this.city.length; i++){
       if (JSON.stringify(this.city[i])===JSON.stringify(this.selectedCity)){
@@ -33,7 +34,7 @@ updateWeatherAndDescription(){
   }
 }
 
-
+// gets city from travel service/backend
   getCity():void{
     this.travelService.getCities().subscribe(
       (response: City[])=>{

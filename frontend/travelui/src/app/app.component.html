@@ -3,7 +3,7 @@
     <div class="container">
       <h4><b>Travel Planner </b> </h4>
 
-
+<!-- Uses MatForm from angular to create dropdown with values as city.name-->
 <div class="matForm">
 <mat-form-field appearance="fill">
   <mat-label>Select your city</mat-label>
@@ -17,11 +17,12 @@
 </div>
 
 
-
+<!-- Description is linked with city.description, which gets changes when value is selected from dropdown-->
 <div class="description">
   {{description}}
 </div>
 
+<!-- weather is linked with city.weather, which gets changes when value is selected from dropdown-->
 <div class="weather">
   {{weather}}
 </div>

@@ -9,9 +9,11 @@ import { environment } from 'src/environments/environment';
 })
 export class TravelService {
 
-  private apiAddr = environment.apiAddr;
-  constructor(private http: HttpClient) {}
 
+  private apiAddr = environment.apiAddr;  // api location -> local host
+  constructor(private http: HttpClient) {} // uses http client to pull data
+
+  // gets cities from localhost:8090/api/v1/all
   public getCities(): Observable<City[]>{
     return this.http.get<City[]>(`${this.apiAddr}/api/v1/all`)
   }
