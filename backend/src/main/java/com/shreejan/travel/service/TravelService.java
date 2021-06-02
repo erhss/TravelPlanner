@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+// uses TravelRepo to CRUD data from database
 @Service
 public class TravelService {
     public final TravelRepo travelRepo;

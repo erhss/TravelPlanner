@@ -19,7 +19,7 @@ public class TravelApplication {
 	}
 
 
-	// CORS
+	// CORS boiler. template from online sources.
 	@Bean
 	public CorsFilter corsFilter(){
 		CorsConfiguration corsConfiguration = new CorsConfiguration();

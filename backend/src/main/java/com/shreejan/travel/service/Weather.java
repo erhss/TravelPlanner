@@ -13,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
+
 @Configuration
 @EnableScheduling
 public class Weather {
@@ -23,17 +24,18 @@ public class Weather {
         this.travelRepo = travelRepo;
     }
 
+    // Gets weather from open weather map and adds to the database every 15minutes.
     @Scheduled(fixedRate = 900000)
     public void addWeatherOfCity(){
         RestTemplate restTemplate = new RestTemplate();
         Gson gson = new GsonBuilder().create();
         List<City> cityList = travelRepo.findAll();
-        for (City city : cityList) {
+        for (City city : cityList) {                    // loops through all the cities
             final String uri = "http://api.openweathermap.org/data/2.5/weather?q=" + city.getName() + "&APPID=07d853da85316085eca5c39ed82707f3";
                 String result = restTemplate.getForObject(uri, String.class);
                 JsonObject job = gson.fromJson(result, JsonObject.class);
-                JsonElement entry = job.getAsJsonObject("main").get("temp");
-                JsonElement entry2 = job.getAsJsonArray("weather").get(0).getAsJsonObject().get("main");
+                JsonElement entry = job.getAsJsonObject("main").get("temp");                                            // extracts the temperature from the json
+                JsonElement entry2 = job.getAsJsonArray("weather").get(0).getAsJsonObject().get("main");    // extracts how the weather is; i.e. cloudy
                 int weatherInt = entry.getAsInt();
                 weatherInt -= 273; // kelvin to Celsius
                 String weather = "The weather is " + entry2.toString() + " and it is " + weatherInt + " degrees celsius";

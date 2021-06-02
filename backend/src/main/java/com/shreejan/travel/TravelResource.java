@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+// Maps all of the incoming calls, and CRUDs as needed. Only /all and /find is needed in deployment for this application.
 @RestController
 @RequestMapping("api/v1")
 public class TravelResource {

@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
+// uses JPA repository to query into database
 public interface TravelRepo extends JpaRepository<City,String> {
     void deleteCityByName(String name);
 
