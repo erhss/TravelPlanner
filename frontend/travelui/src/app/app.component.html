@@ -1,0 +1,28 @@
+
+  <div class="ui">
+    <div class="container">
+      <h4><b>Travel Planner </b> </h4>
+
+
+<div class="matForm">
+<mat-form-field appearance="fill">
+  <mat-label>Select your city</mat-label>
+  <mat-select [(value)]="selectedCity">
+    <mat-option *ngFor="let item of city" [value]="item">
+      {{item.name}}
+      {{updateWeatherAndDescription()}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
+
+
+
+<div class="description">
+  {{description}}
+</div>
+
+<div class="weather">
+  {{weather}}
+</div>
+</div>

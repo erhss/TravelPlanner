@@ -1,0 +1,24 @@
+{
+    "name":"Ottawa",
+    "description":"Capital of Canada"
+}
+
+{
+    "name":"Toronto",
+    "description":"Capital of Ontario"
+}
+
+{
+    "name":"Edmonton",
+    "description":"Capital of Alberta"
+}
+
+{
+    "name":"Quebec",
+    "description":"Capital of Québec"
+}
+
+{
+    "name":"Fredericton",
+    "description":"Capital of New Brunswick"
+}
